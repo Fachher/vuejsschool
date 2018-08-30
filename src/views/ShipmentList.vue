@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ListMenu/>
+        <ListMenu msg="Links"/>
         <ListContent/>
     </div>
 </template>
@@ -16,7 +16,9 @@
             ListContent
         }
     })
-    export default class ShipmentList extends Vue {}
+    export default class ShipmentList extends Vue {
+
+    }
 </script>
 
 <style scoped>

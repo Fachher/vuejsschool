@@ -1,5 +1,12 @@
 <template>
-    <table>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ShipmentId</td>
+                <td>TrackingNumber</td>
+                <td>ModeOfTransport</td>
+            </tr>
+        </thead>
         <tbody>
         <tr>
             <td>1</td>

@@ -36,6 +36,13 @@
             return 10 + 1;
         }
 
+        mounted(){
+            this.$store.dispatch('asyncAction').then(() => {
+                console.log('async operation completed')
+            });
+            this.$store.dispatch('asyncAction2');
+        }
+
 
     }
 </script>

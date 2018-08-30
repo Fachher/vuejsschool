@@ -1,5 +1,5 @@
 <template>
-    <div style="border:1px solid black;">
+    <div style="border:1px solid black;text-align: left;padding: 10px 10px 10px 10px">
         <h1>{{msg}}</h1>
         <ul>
             <li><a href="http://www.google.de">Google</a></li>
@@ -12,7 +12,11 @@
         <ul v-for="todo in doneTodos">
             <li>{{todo.text}}</li>
         </ul>
-        <span>{{computedMsg}}</span>
+        <p>{{computedMsg}}</p>
+
+        <input type="text" v-model="msg"/>
+
+        <button @click="informParent">Inform parent</button>
     </div>
 </template>
 
@@ -25,7 +29,7 @@
 
         // ================== vue properties which can been set by directives ============
 
-        @Prop()
+        @Model()
         private msg!: string;
 
         @Prop({required: true, default: 1, type: String})
@@ -39,6 +43,10 @@
             console.log(`newValu: ${newVal}`);
         }
 
+        @Watch("msg")
+        messageChanged(){
+            console.log("message has been changed");
+        }
 
         // ========== computed methods ============
         @NoCache
@@ -65,6 +73,11 @@
             this.$store.dispatch('increment');
             console.log(`Count up by offset ${offset}`);
             console.log(this.count);
+        }
+
+        informParent(event:Event){
+            this.$emit('clicked');
+            console.log(event);
         }
 
 

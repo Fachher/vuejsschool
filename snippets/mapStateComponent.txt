@@ -1,0 +1,12 @@
+@Component({
+  computed: {
+    ...mapState('foo', {
+      bar: state => state.bar
+    }
+  },
+  methods: {
+    ...mapActions('foo', [
+      'doSomething'
+    ])
+  }
+})

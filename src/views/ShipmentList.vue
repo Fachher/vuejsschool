@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ListMenu msg="Links" count="0"/>
+        <ListMenu msg="empty" count="0" @clicked="inform"/>
         <ListContent/>
         <span>Total count: {{ doneTodosCount }}</span>
         <br>
@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator';
+    import {Component, Prop, Vue} from 'vue-property-decorator';
     import ListContent from '@/components/ListContent.vue';
     import ListMenu from '@/components/ListMenu.vue';
     import {mapGetters} from "vuex";
@@ -30,6 +30,10 @@
         // route event handler
         beforeRouteEnter() {
             console.log('shipment list route has been entered');
+        }
+
+        inform(){
+            console.log('child has informed parent')
         }
 
         get anotherComputedMethod(): number{

@@ -13,6 +13,7 @@
     import ListContent from '@/components/ListContent.vue';
     import ListMenu from '@/components/ListMenu.vue';
     import {mapGetters} from "vuex";
+    import {Route} from "vue-router";
 
     @Component({
         components: {
@@ -28,7 +29,7 @@
         }
 
         // route event handler
-        beforeRouteEnter() {
+        beforeRouteEnter(to: Route, from: Route, next: Function) {
             console.log('shipment list route has been entered');
         }
 

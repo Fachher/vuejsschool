@@ -7,11 +7,13 @@
 <script lang="ts">
     import { Vue } from 'vue-property-decorator';
     import Component from "vue-class-component";
+    import {Route} from "vue-router";
 
     @Component
     export default class Home extends Vue {
-        beforeRouteEnter() {
+        beforeRouteEnter(to: Route, from: Route, next: Function) {
             console.log('About has been entered');
         }
+
     }
 </script>

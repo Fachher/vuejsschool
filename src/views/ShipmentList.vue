@@ -31,6 +31,7 @@
         // route event handler
         beforeRouteEnter(to: Route, from: Route, next: Function) {
             console.log('shipment list route has been entered');
+            next();
         }
 
         inform(){

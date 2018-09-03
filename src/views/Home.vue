@@ -18,6 +18,7 @@ import {Route} from "vue-router"; // @ is an alias to /src
 export default class Home extends Vue {
     beforeRouteEnter(to: Route, from: Route, next: Function) {
         console.log('Home route has been entered');
+        next();
     }
 
 }

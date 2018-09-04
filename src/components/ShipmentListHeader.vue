@@ -8,7 +8,7 @@
             <input v-model="searchInputString" v-on:keyup="inputChange">
         </p>
 
-        <p>Your are searching for: {{searchInputString}}</p>
+        <p>You are searching for: {{searchInputString}}</p>
 
         <p>Current date is: {{shipmentListModel.currentDate}}</p>
     </div>
@@ -38,8 +38,8 @@
             // TODO: show modal window with help text
         }
 
-        inputChange(event: Event){
-            this.$emit('searchStringChanged');
+        inputChange(event:Event){
+            this.$emit('searchStringChanged', (<HTMLInputElement>event.target).value);
         }
 
         /* ============ computed properties ===============*/

@@ -5,10 +5,12 @@
         <button v-on:click="showHelpMessage">Show help message</button>
 
         <p>
-            <input v-model="searchInputString">
+            <input v-model="searchInputString" v-on:keyup="inputChange">
         </p>
 
         <p>Your are searching for: {{searchInputString}}</p>
+
+        <p>Current date is: {{shipmentListModel.currentDate}}</p>
     </div>
 </template>
 
@@ -16,7 +18,7 @@
     import Vue from 'vue'
     import Component from 'vue-class-component'
     import ShipmentListModel from '@/model/ShipmentListModel';
-    import {Model, Prop} from "vue-property-decorator";
+    import {Prop} from "vue-property-decorator";
 
     @Component({
     })
@@ -27,25 +29,27 @@
         // data
         searchInputString:string = "";
 
-        // properties set from outside
         @Prop()
         shipmentListModel!: ShipmentListModel;
 
-        // methods
+        /* ========== methods ================== */
         showHelpMessage(){
             alert('Search by milestone and mode of transport!')
             // TODO: show modal window with help text
         }
 
-        // computed properties
+        inputChange(event: Event){
+            this.$emit('searchStringChanged');
+        }
+
+        /* ============ computed properties ===============*/
         get searchInputStringBeautified(){
             return `[${this.searchInputString}]`;
         }
 
-        // lifecycle hooks
+        /* ============== Lifecycle hooks ================= */
         mounted(){
             console.log(`${name} has been rendered`);
-            console.log(`mounted to ${this.$el}`);
         }
     }
 </script>

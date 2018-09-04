@@ -25,7 +25,7 @@
     import {NoCache} from "../decorators/no-cache";
 
     @Component
-    export default class ListMenu extends Vue {
+    export default class Composite2 extends Vue {
 
         // ================== vue properties which can been set by directives ============
 

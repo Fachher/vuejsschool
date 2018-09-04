@@ -21,7 +21,7 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
 
     @Component
-    export default class ListContent extends Vue {
+    export default class Composite1 extends Vue {
         @Prop() private msg!: string;
     }
 </script>

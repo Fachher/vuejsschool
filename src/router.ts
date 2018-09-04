@@ -20,8 +20,12 @@ export default new Router({
             component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
         },
         {
-            path: '/list',
-            name: 'list',
+            path: '/composite',
+            name: 'composite',
+            component: () => import(/* webpackChunkName: "list" */ './views/CompositeComponent.vue')
+        },{
+            path: '/shipment-list',
+            name: 'shipment-list',
             component: () => import(/* webpackChunkName: "list" */ './views/ShipmentList.vue')
         }
     ]

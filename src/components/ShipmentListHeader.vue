@@ -27,6 +27,7 @@
     import ShipmentListModel from '@/model/ShipmentListModel';
     import {Prop} from "vue-property-decorator";
     import {debounce} from "lodash";
+    import {NoCache} from "../decorators/no-cache";
 
     @Component({
     })
@@ -40,7 +41,7 @@
 
         private searchInputString:string = ""; // vuejs data
 
-        @Prop()
+        @Prop({required: true, type: ShipmentListModel})
         private shipmentListModel!: ShipmentListModel; // vuejs property
 
         /* ============== private methods ================ */
@@ -58,6 +59,7 @@
 
         /* ============ computed properties ============== */
 
+        @NoCache
         get searchInputStringBeautified(){
             return `[${this.searchInputString}]`;
         }

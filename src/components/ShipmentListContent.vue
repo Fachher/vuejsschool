@@ -40,7 +40,7 @@
         shipmentListModel!: ShipmentListModel;
 
         mounted(){
-            console.log(`${name} has been rendered`)
+
         }
     }
 </script>

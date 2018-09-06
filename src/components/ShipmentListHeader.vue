@@ -11,6 +11,13 @@
         <p>You are searching for: {{searchInputString}}</p>
 
         <p>Current date is: {{shipmentListModel.currentDate}}</p>
+
+        <b-btn v-b-modal.modal1>Launch demo modal</b-btn>
+
+        <b-modal id="modal1" title="Bootstrap-Vue">
+            <p class="my-4">Simple modal window</p>
+        </b-modal>
+
     </div>
 </template>
 
@@ -58,7 +65,7 @@
         /* ============== Lifecycle hooks ================ */
 
         mounted(){
-            console.log(`${name} has been rendered`);
+
         }
     }
 </script>
